@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.node-parent {
+  width: 50px;
+  height: 70px;
+  /* border: 2px solid blue; */
+  font-size: 10px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+}
+
+.node-name {
+  color: red;
+  border: 2px solid red;
+  height: 19px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.node {
+  border: 2px solid yellow;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.capacity {
+  color: green;
+  border: 2px solid green;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

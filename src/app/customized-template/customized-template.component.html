@@ -1,1 +1,56 @@
-<p>customized-template works!</p>
+<div style="width: 100%; height: 500px; border: 1px solid blue">
+  <ngx-graph [links]="all_links" [nodes]="all_nodes">
+    /*TEMPLATE FOR NODE*/
+    <ng-template #nodeTemplate let-node>
+      <svg:g>
+        <svg:foreignObject [attr.width]="50" height="70">
+          <xhtml:div>
+            <div class="node-parent">
+              <div class="node-name">P1</div>
+              <div class="node"></div>
+              <div class="capacity">4</div>
+            </div>
+          </xhtml:div>
+        </svg:foreignObject>
+      </svg:g>
+    </ng-template>
+
+    /*TEMPLATE FOR LINK*/
+    <ng-template #defsTemplate>
+      <svg:marker
+        id="arrowRed"
+        viewBox="0 -5 10 10"
+        refX="8"
+        refY="0"
+        markerWidth="4"
+        markerHeight="4"
+        orient="auto"
+        fill=""
+      >
+        <svg:path d="M0,-5L10,0L0,5" class="arrow-head" stroke="red" />
+      </svg:marker>
+    </ng-template>
+
+    <ng-template #linkTemplate let-link>
+      <svg:g class="edge">
+        <svg:path
+          class="line"
+          [attr.stroke]="'yellow'"
+          stroke-width="2"
+          [attr.marker-end]="'url(#arrowRed)'"
+        ></svg:path>
+        <svg:text class="edge-label" text-anchor="middle">
+          <textPath
+            class="text-path"
+            [attr.stroke]="'green'"
+            [attr.href]="'#' + link.id"
+            [style.dominant-baseline]="link.dominantBaseline"
+            startOffset="50%"
+          >
+            test be
+          </textPath>
+        </svg:text>
+      </svg:g>
+    </ng-template>
+  </ngx-graph>
+</div>
