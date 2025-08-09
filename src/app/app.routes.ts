@@ -9,6 +9,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'custom',
+    loadComponent: () =>
+      import('./customized-template/customized-template.component').then(
+        (m) => m.CustomizedTemplateComponent
+      ),
+  },
+  {
     path: '',
     loadComponent: () =>
       import('./tri-color-fire/tri-color-fire.component').then(
