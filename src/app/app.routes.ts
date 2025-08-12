@@ -9,6 +9,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'tri-problem',
+    loadComponent: () =>
+      import('./tri-problem/tri-problem.component').then(
+        (m) => m.TriProblemComponent
+      ),
+  },
+  {
     path: 'tri2',
     loadComponent: () =>
       import('./tri2/tri2.component').then((m) => m.Tri2Component),
